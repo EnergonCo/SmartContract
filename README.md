@@ -1,2 +1,2 @@
-# SmartContract
-Energon Token
+# Energon SmartContract
+ENRG token distribution
