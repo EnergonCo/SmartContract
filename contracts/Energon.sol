@@ -33,10 +33,9 @@ contract Energon {
     mapping (address => mapping (address => uint256)) public allowed;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
-
     event TransferFrom(address indexed _spender, address indexed _from, address indexed _to, uint256 _value);
-
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+    event Burn(address indexed burner, uint256 value);
 
     function Energon() public {balanceOf[msg.sender] = totalSupply;}
 
@@ -164,4 +163,20 @@ contract Energon {
 
     // revert on eth transfers to this contract
     function() public payable {revert();}
+    
+    /**
+    * @dev Burns a specific amount of tokens.
+    * @param _value The amount of token to be burned.
+    */
+    function burn(uint256 _value) public {
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balanceOf[burner] = balanceOf[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        Burn(burner, _value);
+    }
 }
