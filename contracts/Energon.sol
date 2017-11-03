@@ -17,9 +17,10 @@ contract Energon {
     * @storage allowed Holds the allowable balance to be transferable by another address.
     */
 
-    string constant public name = "ENRG";
-
-    string constant public symbol = "ENRG";
+    string constant public website = "energon.technology";
+    
+    string constant public name = "ENERGON";
+    string constant public symbol = "NRG";
 
     uint8 constant public decimals = 10;
 
