@@ -17,6 +17,7 @@ contract Energon {
     * @storage allowed Holds the allowable balance to be transferable by another address.
     */
 
+    string constant public version = "1.0beta";
     string constant public website = "energon.technology";
     
     string constant public name = "ENERGON";
