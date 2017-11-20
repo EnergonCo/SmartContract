@@ -20,12 +20,12 @@ contract Energon {
     string constant public version = "1.0beta";
     string constant public website = "energon.technology";
     
-    string constant public name = "ENERGON";
-    string constant public symbol = "NRG";
+    string constant public name = "ENERGONPS";
+    string constant public symbol = "ENRGPS";
 
-    uint8 constant public decimals = 10;
+    uint8 constant public decimals = 8;
 
-    uint256 constant public totalSupply = 1000000000e8;
+    uint256 constant public totalSupply = 10000000e8;
 
     uint256 constant private MAX_UINT256 = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 
